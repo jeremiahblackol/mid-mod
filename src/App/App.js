@@ -6,15 +6,23 @@ import './App.css';
 class App extends Component {
     constructor() {
       super();
-      this.state = {}
+      this.state = {
+        reservations: []
+      }
     }
 
   componentDidMount = () => {
     fetch("http://localhost:3001/api/v1/reservations")
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => this.setState( { reservations: data }))
       .catch(err => console.log(err.message))
   }
+
+  displayReservations = async () => {
+    let stateReservations = await this.state.reservations
+    return stateReservations.map((reservation) => <li>${reservation.name}</li>)
+  }
+
   render() {
     return (
       <div className="App">
@@ -23,7 +31,10 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-          
+          {console.log("state", this.state.reservations)}
+          <ul>
+          {this.state.reservations.map((reservation) => <li>{reservation.name}</li>)}
+          </ul>
         </div>
       </div>
     )
