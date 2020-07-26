@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import ReservationCard from '../ReservationCard/ReservationCard'
 
 // to test push
 
@@ -18,9 +19,8 @@ class App extends Component {
       .catch(err => console.log(err.message))
   }
 
-  displayReservations = async () => {
-    let stateReservations = await this.state.reservations
-    return stateReservations.map((reservation) => <li>${reservation.name}</li>)
+  displayReservations = () => {
+    return this.state.reservations.map((reservation) => <ReservationCard props={reservation}/>)
   }
 
   render() {
@@ -31,14 +31,18 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-          {console.log("state", this.state.reservations)}
-          <ul>
-          {this.state.reservations.map((reservation) => <li>{reservation.name}</li>)}
-          </ul>
+            
+            {this.state.reservations.map((reservation) => {
+              return <section className="reservationCard"><ReservationCard reservation={reservation} />
+            </section>
+            })}
         </div>
       </div>
     )
   }
 }
+// {console.log("state", this.state.reservations)}
+// {console.log('card', <ReservationCard />)}
+// {this.state.reservations.map((reservation) => <ReservationCard info={reservation}/>)}
 
 export default App;
