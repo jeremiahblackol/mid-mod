@@ -1,15 +1,15 @@
 import React from "react";
+import "./ReservationCard.css"
 
-const ReservationCard = (props) => {
-    console.log("name", props.reservation.name)
+const ReservationCard = ({reservation}) => {
+    console.log("name", reservation)
     return (
-        <div>
-            <p>Name: {props.reservation.name}</p>
-            <p>Date: {props.reservation.date}</p>
-            <p>Time: {props.reservation.time}</p>
-            <p>Number of guests: {props.reservation.number}</p>
-
-        </div>
+        <section className="reservationCard">
+            <p>Name: {reservation.name}</p>
+            <p>Date: {reservation.date}</p>
+            <p>Time: {reservation.time}</p>
+            <p>Number of guests: {reservation.number}</p>
+        </section>
     )
 } 
 
