@@ -1,6 +1,5 @@
 import React from 'react';
 import ReservationForm from './ReservationForm';
-import App from '../App/App';
 
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
