@@ -36,7 +36,7 @@ class ReservationForm extends React.Component {
                 <input onChange={(event) => this.handleChange(event)}value={this.state.date} type="date" name="date" placeholder="date"></input>
                 <input onChange={(event) => this.handleChange(event)}value={this.state.time} type="time" name="time" placeholder="time"></input>
                 <input onChange={(event) => this.handleChange(event)}value={this.state.number} type="text" name="number" placeholder="guests"></input>
-                <button type="submit" onClick={this.addId}></button>
+                <button type="submit" onClick={this.addId}>reserve</button>
             </form>
         )
     }
