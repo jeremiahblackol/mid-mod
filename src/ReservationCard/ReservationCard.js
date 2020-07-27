@@ -2,7 +2,6 @@ import React from "react";
 import "./ReservationCard.css"
 
 const ReservationCard = ({reservation}) => {
-    console.log("name", reservation)
     return (
         <section className="reservationCard">
             <p>Name: {reservation.name}</p>

@@ -21,7 +21,8 @@ class ReservationForm extends React.Component {
 
     submitForm = (event) => {
         event.preventDefault()
-        console.log(Object.entries(this.state))
+        console.log("res objects", this.state)
+        this.props.addReservation(this.state)
     }
 
     addId = () => {
